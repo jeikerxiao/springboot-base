@@ -15,7 +15,7 @@ import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
 
-import com.company.project.core.ServiceException;
+import com.company.project.core.exception.ServiceException;
 import com.company.project.core.result.Result;
 import com.company.project.core.result.ResultCode;
 import org.apache.commons.codec.digest.DigestUtils;
@@ -66,18 +66,23 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
             public ModelAndView resolveException(HttpServletRequest request, HttpServletResponse response, Object handler, Exception e) {
                 Result result = new Result();
                 if (e instanceof ServiceException) {//业务失败的异常，如“账号或密码错误”
-                    result.setCode(ResultCode.FAILURE.getCode());
-                    result.setMessage(e.getMessage());
+                    ServiceException exception = (ServiceException) e;
+                    result.setCode(exception.getCode());
+                    result.setMessage(exception.getMessage());
+                    result.setData("");
                     logger.info(e.getMessage());
                 } else if (e instanceof NoHandlerFoundException) {
                     result.setCode(ResultCode.NOT_FOUND.getCode());
                     result.setMessage("接口 [" + request.getRequestURI() + "] 不存在");
+                    result.setData("");
                 } else if (e instanceof ServletException) {
                     result.setCode(ResultCode.FAILURE.getCode());
                     result.setMessage(e.getMessage());
+                    result.setData("");
                 } else {
                     result.setCode(ResultCode.INTERNAL_SERVER_ERROR.getCode());
                     result.setMessage("接口 [" + request.getRequestURI() + "] 内部错误，请联系管理员");
+                    result.setData("");
                     String message;
                     if (handler instanceof HandlerMethod) {
                         HandlerMethod handlerMethod = (HandlerMethod) handler;

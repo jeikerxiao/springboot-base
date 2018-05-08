@@ -1,5 +1,8 @@
 package com.company.project.core;
 
+import com.company.project.core.exception.ServiceException;
+import com.company.project.core.result.ResultCode;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.exceptions.TooManyResultsException;
 import org.springframework.beans.factory.annotation.Autowired;
 import tk.mybatis.mapper.entity.Condition;
@@ -11,6 +14,7 @@ import java.util.List;
 /**
  * 基于通用MyBatis Mapper插件的Service接口的实现
  */
+@Slf4j
 public abstract class AbstractService<T> implements Service<T> {
 
     @Autowired
@@ -56,7 +60,8 @@ public abstract class AbstractService<T> implements Service<T> {
             field.set(model, value);
             return mapper.selectOne(model);
         } catch (ReflectiveOperationException e) {
-            throw new ServiceException(e.getMessage(), e);
+            log.error("[查找] : {}", e);
+            throw new ServiceException(ResultCode.SYSTEM_ERROR);
         }
     }
 
