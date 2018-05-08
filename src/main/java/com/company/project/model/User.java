@@ -1,5 +1,6 @@
 package com.company.project.model;
 
+import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import java.util.Date;
@@ -10,12 +11,13 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @NotEmpty(message = "用户名不能为空")
+    @NotBlank(message = "用户名不能为空")
     private String username;
 
-    @NotEmpty(message = "密码不能为空")
+    @NotBlank(message = "密码不能为空")
     private String password;
 
+    @NotBlank(message = "用户昵称不能为空")
     @Column(name = "nick_name")
     private String nickName;
 
