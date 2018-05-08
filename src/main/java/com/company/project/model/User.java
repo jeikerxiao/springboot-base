@@ -1,5 +1,7 @@
 package com.company.project.model;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import java.util.Date;
 import javax.persistence.*;
 
@@ -8,8 +10,10 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @NotEmpty(message = "用户名不能为空")
     private String username;
 
+    @NotEmpty(message = "密码不能为空")
     private String password;
 
     @Column(name = "nick_name")

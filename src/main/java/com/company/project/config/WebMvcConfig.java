@@ -58,7 +58,7 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
         converters.add(converter);
     }
 
-
+    /**
     //统一异常处理
     @Override
     public void configureHandlerExceptionResolvers(List<HandlerExceptionResolver> exceptionResolvers) {
@@ -102,6 +102,7 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
 
         });
     }
+    */
 
     //解决跨域问题
     @Override
@@ -128,6 +129,7 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
                         Result result = new Result();
                         result.setCode(ResultCode.UNAUTHORIZED.getCode());
                         result.setMessage("签名认证失败");
+                        result.setData("");
                         responseResult(response, result);
                         return false;
                     }
