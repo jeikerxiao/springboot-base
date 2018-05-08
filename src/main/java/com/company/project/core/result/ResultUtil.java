@@ -1,13 +1,9 @@
 package com.company.project.core.result;
 
-public class ResultApi {
+public class ResultUtil {
 
     public static <T> Result<T> success() {
-        Result<T> result = new Result<>();
-        result.setCode(ResultCode.SUCCESS.getCode());
-        result.setMessage(ResultCode.SUCCESS.getMessage());
-        result.setData(null);
-        return result;
+        return success(null);
     }
 
     public static <T> Result<T> success(T data) {
@@ -19,11 +15,7 @@ public class ResultApi {
     }
 
     public static <T> Result<T> failure() {
-        Result<T> result = new Result<>();
-        result.setCode(ResultCode.FAILURE.getCode());
-        result.setMessage(ResultCode.FAILURE.getMessage());
-        result.setData(null);
-        return result;
+        return failure(ResultCode.FAILURE);
     }
 
     public static <T> Result<T> failure(ResultCode msg) {

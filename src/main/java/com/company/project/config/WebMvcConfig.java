@@ -1,4 +1,4 @@
-package com.company.project.configurer;
+package com.company.project.config;
 
 import java.io.IOException;
 import java.nio.charset.Charset;
@@ -17,7 +17,6 @@ import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
 
 import com.company.project.core.ServiceException;
 import com.company.project.core.result.Result;
-import com.company.project.core.result.ResultApi;
 import com.company.project.core.result.ResultCode;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -189,7 +188,7 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
             ip = request.getRemoteAddr();
         }
         // 如果是多级代理，那么取第一个ip为客户端ip
-        if (ip != null && ip.indexOf(",") != -1) {
+        if (ip != null && ip.contains(",")) {
             ip = ip.substring(0, ip.indexOf(",")).trim();
         }
 

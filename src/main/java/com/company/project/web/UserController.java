@@ -1,7 +1,7 @@
 package com.company.project.web;
 
 import com.company.project.core.result.Result;
-import com.company.project.core.result.ResultApi;
+import com.company.project.core.result.ResultUtil;
 import com.company.project.model.User;
 import com.company.project.service.UserService;
 import com.github.pagehelper.PageHelper;
@@ -26,25 +26,25 @@ public class UserController {
     @PostMapping("/add")
     public Result add(User user) {
         userService.save(user);
-        return ResultApi.success();
+        return ResultUtil.success();
     }
 
     @PostMapping("/delete")
     public Result delete(@RequestParam Integer id) {
         userService.deleteById(id);
-        return ResultApi.success();
+        return ResultUtil.success();
     }
 
     @PostMapping("/update")
     public Result update(User user) {
         userService.update(user);
-        return ResultApi.success();
+        return ResultUtil.success();
     }
 
     @PostMapping("/detail")
     public Result detail(@RequestParam Integer id) {
         User user = userService.findById(id);
-        return ResultApi.success(user);
+        return ResultUtil.success(user);
     }
 
     @PostMapping("/list")
@@ -52,6 +52,6 @@ public class UserController {
         PageHelper.startPage(page, size);
         List<User> list = userService.findAll();
         PageInfo pageInfo = new PageInfo(list);
-        return ResultApi.success(pageInfo);
+        return ResultUtil.success(pageInfo);
     }
 }

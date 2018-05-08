@@ -1,7 +1,7 @@
 package ${basePackage}.web;
 
-import ${basePackage}.core.Result;
-import ${basePackage}.core.ResultGenerator;
+import ${basePackage}.core.result.Result;
+import ${basePackage}.core.result.ResultUtil;
 import ${basePackage}.model.${modelNameUpperCamel};
 import ${basePackage}.service.${modelNameUpperCamel}Service;
 import com.github.pagehelper.PageHelper;
@@ -23,25 +23,25 @@ public class ${modelNameUpperCamel}Controller {
     @PostMapping
     public Result add(@RequestBody ${modelNameUpperCamel} ${modelNameLowerCamel}) {
         ${modelNameLowerCamel}Service.save(${modelNameLowerCamel});
-        return ResultGenerator.genSuccessResult();
+        return ResultUtil.success();
     }
 
     @DeleteMapping("/{id}")
     public Result delete(@PathVariable Integer id) {
         ${modelNameLowerCamel}Service.deleteById(id);
-        return ResultGenerator.genSuccessResult();
+        return ResultUtil.success();
     }
 
     @PutMapping
     public Result update(@RequestBody ${modelNameUpperCamel} ${modelNameLowerCamel}) {
         ${modelNameLowerCamel}Service.update(${modelNameLowerCamel});
-        return ResultGenerator.genSuccessResult();
+        return ResultUtil.success();
     }
 
     @GetMapping("/{id}")
     public Result detail(@PathVariable Integer id) {
         ${modelNameUpperCamel} ${modelNameLowerCamel} = ${modelNameLowerCamel}Service.findById(id);
-        return ResultGenerator.genSuccessResult(${modelNameLowerCamel});
+        return ResultUtil.success(${modelNameLowerCamel});
     }
 
     @GetMapping
@@ -49,6 +49,6 @@ public class ${modelNameUpperCamel}Controller {
         PageHelper.startPage(page, size);
         List<${modelNameUpperCamel}> list = ${modelNameLowerCamel}Service.findAll();
         PageInfo pageInfo = new PageInfo(list);
-        return ResultGenerator.genSuccessResult(pageInfo);
+        return ResultUtil.success(pageInfo);
     }
 }
