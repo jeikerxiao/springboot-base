@@ -32,7 +32,7 @@ public static void main(String[] args) {
 
 方法一：
 
-java代码生成
+java代码生成（推荐此方法，原因可生成的更多格式文档）
 
 1. 启动项目`Application`,保证 `http://localhost:8080/v2/api-docs` 接口可以访问，API文档生成需要。
 2. 运行test项目下的 `GenerateApiDocs` 测试用例生成API文档。
@@ -55,5 +55,7 @@ mvn asciidoctor:process-asciidoc
 > 推荐使用 IntelliJ IDEA 右边栏的 maven 工具直接执行命令。
 
 ![idea工具](image/API2.png)
+
+生成后的html文档：
 
 ![html api](image/API1.png)
