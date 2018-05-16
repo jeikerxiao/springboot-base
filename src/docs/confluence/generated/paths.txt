@@ -1,0 +1,273 @@
+
+h2. Paths {anchor:paths}
+
+h3. add {anchor:addusingpost}
+{noformat}
+POST /user/add
+{noformat}
+
+
+h4. Parameters
+
+||Type||Name||Description||Schema||
+|*Header*|*access_token*\\ \\ _required_||user access token||string|
+|*Header*|*timestamp*\\ \\ _optional_||access timestamp||integer (int32)|
+|*Body*|*user*\\ \\ _required_||user||[用户基本信息|#f27103dead187fe6c304ecd07f70768d]|
+
+
+h4. Responses
+
+||HTTP Code||Description||Schema||
+|*200*||OK||[Result|#result]|
+|*201*||Created||No Content|
+|*401*||Unauthorized||No Content|
+|*403*||Forbidden||No Content|
+|*404*||Not Found||No Content|
+
+
+h4. Consumes
+
+* {noformat}application/json{noformat}
+
+
+h4. Produces
+
+* {noformat}*/*{noformat}
+
+
+h4. Tags
+
+* user-controller
+
+
+h4. Security
+
+||Type||Name||Scopes||
+|*apiKey*|*[Authorization|#authorization]*||global|
+
+
+h3. delete {anchor:deleteusingpost}
+{noformat}
+POST /user/delete
+{noformat}
+
+
+h4. Parameters
+
+||Type||Name||Description||Schema||
+|*Header*|*access_token*\\ \\ _required_||user access token||string|
+|*Header*|*timestamp*\\ \\ _optional_||access timestamp||integer (int32)|
+|*Query*|*id*\\ \\ _required_||id||integer (int32)|
+
+
+h4. Responses
+
+||HTTP Code||Description||Schema||
+|*200*||OK||[Result|#result]|
+|*201*||Created||No Content|
+|*401*||Unauthorized||No Content|
+|*403*||Forbidden||No Content|
+|*404*||Not Found||No Content|
+
+
+h4. Consumes
+
+* {noformat}application/json{noformat}
+
+
+h4. Produces
+
+* {noformat}*/*{noformat}
+
+
+h4. Tags
+
+* user-controller
+
+
+h4. Security
+
+||Type||Name||Scopes||
+|*apiKey*|*[Authorization|#authorization]*||global|
+
+
+h3. detail {anchor:detailusingpost}
+{noformat}
+POST /user/detail
+{noformat}
+
+
+h4. Parameters
+
+||Type||Name||Description||Schema||
+|*Header*|*access_token*\\ \\ _required_||user access token||string|
+|*Header*|*timestamp*\\ \\ _optional_||access timestamp||integer (int32)|
+|*Query*|*id*\\ \\ _required_||id||integer (int32)|
+
+
+h4. Responses
+
+||HTTP Code||Description||Schema||
+|*200*||OK||[Result|#result]|
+|*201*||Created||No Content|
+|*401*||Unauthorized||No Content|
+|*403*||Forbidden||No Content|
+|*404*||Not Found||No Content|
+
+
+h4. Consumes
+
+* {noformat}application/json{noformat}
+
+
+h4. Produces
+
+* {noformat}*/*{noformat}
+
+
+h4. Tags
+
+* user-controller
+
+
+h4. Security
+
+||Type||Name||Scopes||
+|*apiKey*|*[Authorization|#authorization]*||global|
+
+
+h3. list {anchor:listusingpost}
+{noformat}
+POST /user/list
+{noformat}
+
+
+h4. Parameters
+
+||Type||Name||Description||Schema||Default||
+|*Header*|*access_token*\\ \\ _required_||user access token||string|| |
+|*Header*|*timestamp*\\ \\ _optional_||access timestamp||integer (int32)|| |
+|*Query*|*page*\\ \\ _optional_||page||integer (int32)||{noformat}0{noformat}|
+|*Query*|*size*\\ \\ _optional_||size||integer (int32)||{noformat}0{noformat}|
+
+
+h4. Responses
+
+||HTTP Code||Description||Schema||
+|*200*||OK||[Result|#result]|
+|*201*||Created||No Content|
+|*401*||Unauthorized||No Content|
+|*403*||Forbidden||No Content|
+|*404*||Not Found||No Content|
+
+
+h4. Consumes
+
+* {noformat}application/json{noformat}
+
+
+h4. Produces
+
+* {noformat}*/*{noformat}
+
+
+h4. Tags
+
+* user-controller
+
+
+h4. Security
+
+||Type||Name||Scopes||
+|*apiKey*|*[Authorization|#authorization]*||global|
+
+
+h3. test {anchor:testusingget}
+{noformat}
+GET /user/test
+{noformat}
+
+
+h4. Parameters
+
+||Type||Name||Description||Schema||
+|*Header*|*access_token*\\ \\ _required_||user access token||string|
+|*Header*|*timestamp*\\ \\ _optional_||access timestamp||integer (int32)|
+
+
+h4. Responses
+
+||HTTP Code||Description||Schema||
+|*200*||OK||[Result|#result]|
+|*401*||Unauthorized||No Content|
+|*403*||Forbidden||No Content|
+|*404*||Not Found||No Content|
+
+
+h4. Produces
+
+* {noformat}*/*{noformat}
+
+
+h4. Tags
+
+* user-controller
+
+
+h4. Security
+
+||Type||Name||Scopes||
+|*apiKey*|*[Authorization|#authorization]*||global|
+
+
+h3. update {anchor:updateusingpost}
+{noformat}
+POST /user/update
+{noformat}
+
+
+h4. Parameters
+
+||Type||Name||Description||Schema||
+|*Header*|*access_token*\\ \\ _required_||user access token||string|
+|*Header*|*timestamp*\\ \\ _optional_||access timestamp||integer (int32)|
+|*Query*|*id*\\ \\ _optional_|| ||integer (int32)|
+|*Query*|*nickName*\\ \\ _optional_||用户昵称||string|
+|*Query*|*password*\\ \\ _optional_||密码||string|
+|*Query*|*registerDate*\\ \\ _optional_||注册日期||string (date-time)|
+|*Query*|*sex*\\ \\ _optional_||性别||integer (int32)|
+|*Query*|*username*\\ \\ _optional_||用户名||string|
+
+
+h4. Responses
+
+||HTTP Code||Description||Schema||
+|*200*||OK||[Result|#result]|
+|*201*||Created||No Content|
+|*401*||Unauthorized||No Content|
+|*403*||Forbidden||No Content|
+|*404*||Not Found||No Content|
+
+
+h4. Consumes
+
+* {noformat}application/json{noformat}
+
+
+h4. Produces
+
+* {noformat}*/*{noformat}
+
+
+h4. Tags
+
+* user-controller
+
+
+h4. Security
+
+||Type||Name||Scopes||
+|*apiKey*|*[Authorization|#authorization]*||global|
+
+
+

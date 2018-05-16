@@ -1,0 +1,41 @@
+
+[[_definitions]]
+== Definitions
+
+[[_result]]
+=== Result
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**code** +
+__optional__|integer (int32)
+|**data** +
+__optional__|object
+|**message** +
+__optional__|string
+|===
+
+
+[[_f27103dead187fe6c304ecd07f70768d]]
+=== 用户基本信息
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|Name|Description|Schema
+|**id** +
+__optional__||integer (int32)
+|**nickName** +
+__optional__|用户昵称|string
+|**password** +
+__optional__|密码|string
+|**registerDate** +
+__optional__|注册日期|string (date-time)
+|**sex** +
+__optional__|性别|integer (int32)
+|**username** +
+__optional__|用户名|string
+|===
+
+
+

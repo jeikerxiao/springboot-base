@@ -1,0 +1,357 @@
+
+[[_paths]]
+== Paths
+
+[[_addusingpost]]
+=== add
+....
+POST /user/add
+....
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Header**|**access_token** +
+__required__|user access token|string
+|**Header**|**timestamp** +
+__optional__|access timestamp|integer (int32)
+|**Body**|**user** +
+__required__|user|<<_f27103dead187fe6c304ecd07f70768d,用户基本信息>>
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_result,Result>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* user-controller
+
+
+==== Security
+
+[options="header", cols=".^3,.^4,.^13"]
+|===
+|Type|Name|Scopes
+|**apiKey**|**<<_authorization,Authorization>>**|global
+|===
+
+
+[[_deleteusingpost]]
+=== delete
+....
+POST /user/delete
+....
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Header**|**access_token** +
+__required__|user access token|string
+|**Header**|**timestamp** +
+__optional__|access timestamp|integer (int32)
+|**Query**|**id** +
+__required__|id|integer (int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_result,Result>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* user-controller
+
+
+==== Security
+
+[options="header", cols=".^3,.^4,.^13"]
+|===
+|Type|Name|Scopes
+|**apiKey**|**<<_authorization,Authorization>>**|global
+|===
+
+
+[[_detailusingpost]]
+=== detail
+....
+POST /user/detail
+....
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Header**|**access_token** +
+__required__|user access token|string
+|**Header**|**timestamp** +
+__optional__|access timestamp|integer (int32)
+|**Query**|**id** +
+__required__|id|integer (int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_result,Result>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* user-controller
+
+
+==== Security
+
+[options="header", cols=".^3,.^4,.^13"]
+|===
+|Type|Name|Scopes
+|**apiKey**|**<<_authorization,Authorization>>**|global
+|===
+
+
+[[_listusingpost]]
+=== list
+....
+POST /user/list
+....
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4,.^2"]
+|===
+|Type|Name|Description|Schema|Default
+|**Header**|**access_token** +
+__required__|user access token|string|
+|**Header**|**timestamp** +
+__optional__|access timestamp|integer (int32)|
+|**Query**|**page** +
+__optional__|page|integer (int32)|`0`
+|**Query**|**size** +
+__optional__|size|integer (int32)|`0`
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_result,Result>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* user-controller
+
+
+==== Security
+
+[options="header", cols=".^3,.^4,.^13"]
+|===
+|Type|Name|Scopes
+|**apiKey**|**<<_authorization,Authorization>>**|global
+|===
+
+
+[[_testusingget]]
+=== test
+....
+GET /user/test
+....
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Header**|**access_token** +
+__required__|user access token|string
+|**Header**|**timestamp** +
+__optional__|access timestamp|integer (int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_result,Result>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* user-controller
+
+
+==== Security
+
+[options="header", cols=".^3,.^4,.^13"]
+|===
+|Type|Name|Scopes
+|**apiKey**|**<<_authorization,Authorization>>**|global
+|===
+
+
+[[_updateusingpost]]
+=== update
+....
+POST /user/update
+....
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Header**|**access_token** +
+__required__|user access token|string
+|**Header**|**timestamp** +
+__optional__|access timestamp|integer (int32)
+|**Query**|**id** +
+__optional__||integer (int32)
+|**Query**|**nickName** +
+__optional__|用户昵称|string
+|**Query**|**password** +
+__optional__|密码|string
+|**Query**|**registerDate** +
+__optional__|注册日期|string (date-time)
+|**Query**|**sex** +
+__optional__|性别|integer (int32)
+|**Query**|**username** +
+__optional__|用户名|string
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_result,Result>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* user-controller
+
+
+==== Security
+
+[options="header", cols=".^3,.^4,.^13"]
+|===
+|Type|Name|Scopes
+|**apiKey**|**<<_authorization,Authorization>>**|global
+|===
+
+
+

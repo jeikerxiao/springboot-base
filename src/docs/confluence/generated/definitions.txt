@@ -1,0 +1,23 @@
+
+h2. Definitions {anchor:definitions}
+
+h3. Result {anchor:result}
+
+||Name||Schema||
+|*code*\\ \\ _optional_||integer (int32)|
+|*data*\\ \\ _optional_||object|
+|*message*\\ \\ _optional_||string|
+
+
+h3. 用户基本信息 {anchor:f27103dead187fe6c304ecd07f70768d}
+
+||Name||Description||Schema||
+|*id*\\ \\ _optional_|| ||integer (int32)|
+|*nickName*\\ \\ _optional_||用户昵称||string|
+|*password*\\ \\ _optional_||密码||string|
+|*registerDate*\\ \\ _optional_||注册日期||string (date-time)|
+|*sex*\\ \\ _optional_||性别||integer (int32)|
+|*username*\\ \\ _optional_||用户名||string|
+
+
+

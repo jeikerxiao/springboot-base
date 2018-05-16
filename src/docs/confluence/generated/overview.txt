@@ -1,0 +1,27 @@
+h1. spring-boot-base
+
+
+h2. Overview {anchor:overview}
+spring-boot-base
+
+
+h3. Version information
+_Version_ : 1.0
+
+
+h3. Contact information
+_Contact_ : jeikerxiao\\ 
+_Contact Email_ : jeiker@126.com
+
+
+h3. URI scheme
+_Host_ : localhost:8080\\ 
+_BasePath_ : /
+
+
+h3. Tags
+
+* user-controller : User Controller
+
+
+

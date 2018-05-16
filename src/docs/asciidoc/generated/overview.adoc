@@ -1,0 +1,31 @@
+= spring-boot-base
+
+
+[[_overview]]
+== Overview
+spring-boot-base
+
+
+=== Version information
+[%hardbreaks]
+__Version__ : 1.0
+
+
+=== Contact information
+[%hardbreaks]
+__Contact__ : jeikerxiao
+__Contact Email__ : jeiker@126.com
+
+
+=== URI scheme
+[%hardbreaks]
+__Host__ : localhost:8080
+__BasePath__ : /
+
+
+=== Tags
+
+* user-controller : User Controller
+
+
+
